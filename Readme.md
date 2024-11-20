@@ -18,9 +18,9 @@ timeformat: excel (other formats: unix, unixms, iso8601)
 
 skipmissing: 0
 
-limitinterval: no
+limitinterval: 0
 
-delta: no
+delta: 0
 
 ## The outputs:
 

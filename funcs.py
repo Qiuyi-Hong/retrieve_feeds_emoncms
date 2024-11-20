@@ -48,7 +48,7 @@ class retrieveFeedData:
         The final concatenated dataframe of the feed.
     """
     
-    def __init__(self, id, start, end, apikey, interval=10, average='0', timeformat='excel', skipmissing='no', limitinterval='no', delta='no', base_url='https://emoncms.org/feed/data.json?'):
+    def __init__(self, id, start, end, apikey, interval=10, average='0', timeformat='excel', skipmissing='0', limitinterval='0', delta='0', base_url='https://emoncms.org/feed/data.json?'):
         self.id = id['id_number']
         self.name = id['id_name']
         self.unit = id['id_unit']
@@ -65,7 +65,7 @@ class retrieveFeedData:
         
     def fetch_data(self, start_date, end_date):
         
-        url = f"{self.base_url}id={self.id}&start={start_date}&end={end_date}&interval={self.interval}&average={self.average}&timeformat={self.timeformat}&skipmissing={self.skipmissing}&limitinterval={self.limitinterval}&delta={self.delta}&apikey={self.apikey}"
+        url = f"{self.base_url}id={self.id}&start={start_date.strftime('%d-%m-%Y')}%20{start_date.strftime('%H:%M:%S')}&end={end_date.strftime('%d-%m-%Y')}%20{end_date.strftime('%H:%M:%S')}&interval={self.interval}&average={self.average}&timeformat={self.timeformat}&skipmissing={self.skipmissing}&limitinterval={self.limitinterval}&delta={self.delta}&apikey={self.apikey}"
         
         response = requests.get(url)
         if response.status_code == 200:
