@@ -24,4 +24,4 @@ delta: no
 
 ## The outputs:
 
-The csv file which the name starting with the name of feed for each feed is created. In addition, the final csv file which the name starting with *all_feeds* is created to store all the feeds data in your preferred time period and interval (resolution).
+The CSV file with the name starting with the name of the feed for each feed is created. In addition, the final CSV file, with the name starting with `all_feeds`, is created to store all the feeds data in your preferred time period and interval (resolution).
