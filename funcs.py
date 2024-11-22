@@ -89,9 +89,9 @@ class retrieveFeedData:
         if self.unit == '':
             unit = ''
         else:
-            unit = '(' + self.unit + ')'
+            unit = ' ' + '(' + self.unit + ')'
         
-        df.columns = ['Date', self.name + ' ' + unit]
+        df.columns = ['Date', self.name + unit]
         df.set_index('Date', inplace=True)
         # df.to_csv(csv_file_path, index=True)
         return df
